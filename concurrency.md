@@ -53,7 +53,7 @@
         - In a single threaded app this is trivial.
     - Let's say we have 2 threads A and B.
         - If both A and B pick `value = 9` at the same time, both will do `value++` and return 10. Instead of A updating 9->10 and B updating 10->11
-        - This is called a race condition specifically a data race.
+        - This is called a race condition specifically a check-then-act race
     - For a multithreaded program to be predictable, access to shared variables must be properly coordinated so threads dont interfere with each other.
     - The reason all variables are not synchronized by default is so the JVM/compiler can make certain optimizations.
         - But as a dev we must identify when it is safe to allow such conditions.
